@@ -100,7 +100,7 @@ function pagebody() {
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="/rploader/">Home</a></li>
-              <li><a href="https://ghproxy.com/https://github.com/pocopico/tinycore-redpill">Tinycore Redpill Repo</a></li>
+              <li><a href="https://ghproxy.com/https://github.com/liichao/tinycore-redpill">Tinycore Redpill Repo</a></li>
               <li><a href="https://xpenology.com/forum/topic/53817-redpill-tinycore-loader/">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -430,7 +430,7 @@ function getvars() {
   RAMDISK_COPY=$(cat /home/tc/redpill-load/config/$MODEL/$VERSION/config.json | jq -r -e ' .extra .ramdisk_copy')
   SYNOINFO_USER=$(cat /home/tc/user_config.json | jq -r -e ' .synoinfo')
   RD_COMPRESSED=$(cat /home/tc/redpill-load/config/$MODEL/$VERSION/config.json | jq -r -e ' .extra .compress_rd')
-  redpillextension="https://ghproxy.com/https://github.com/pocopico/rp-ext/raw/main/redpill/rpext-index.json"
+  redpillextension="https://ghproxy.com/https://github.com/liichao/rp-ext/raw/main/redpill/rpext-index.json"
   FILENAME="${OS_ID}.pat"
 
   mount ${tcrppart}
@@ -496,7 +496,7 @@ function downloadextractor() {
   sudo rm -rf ../oldpat.tar.gz
   sudo rm -rf hda1.tgz
 
-  curl --silent --location https://ghproxy.com/https://github.com/pocopico/tinycore-redpill/blob/develop/tools/xxd?raw=true --output xxd
+  curl --silent --location https://ghproxy.com/https://github.com/liichao/tinycore-redpill/blob/develop/tools/xxd?raw=true --output xxd
 
   chmod +x xxd
 
@@ -657,7 +657,7 @@ function downloadtools() {
   [ ! -d /home/tc/tools ] && mkdir /home/tc/tools
   cd /home/tc/tools
   for FILE in bspatch bzImage-to-vmlinux.sh calc_run_size.sh crc32 dtc kexec ramdisk-patch.sh vmlinux-to-bzImage.sh xxd zimage-patch.sh kpatch zImage_template.gz; do
-    [ ! -f /home/tc/tools/$FILE ] && curl --silent --insecure --location "https://ghproxy.com/https://raw.githubusercontent.com/pocopico/tinycore-redpill/develop/tools/${FILE}" -O
+    [ ! -f /home/tc/tools/$FILE ] && curl --silent --insecure --location "https://ghproxy.com/https://raw.githubusercontent.com/liichao/tinycore-redpill/develop/tools/${FILE}" -O
     chmod +x $FILE
   done
 
